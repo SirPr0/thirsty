@@ -68,7 +68,17 @@
         const voiceLines = [
             'audio/flirty1.mp3',
             'audio/flirty2.mp3',
-            'audio/flirty3.mp3'
+            'audio/flirty3.mp3',
+            'audio/flirty4.mp3',
+            'audio/flirty5.mp3',
+            'audio/flirty6.mp3'
+        ];
+
+        // Array of character image paths
+        const characterImages = [
+            'goth_girl_idle.png',
+            'goth_girl_idle2.png',
+            'goth_girl_idle3.png'
         ];
 
         function remindMe() {
@@ -77,6 +87,10 @@
 
             const character = document.getElementById('character-container');
             character.classList.add('show');
+
+            // Set random character image
+            const randomImage = characterImages[Math.floor(Math.random() * characterImages.length)];
+            document.getElementById('goth-girl').src = randomImage;
 
             const randomLine = voiceLines[Math.floor(Math.random() * voiceLines.length)];
             const audio = new Audio(randomLine);
